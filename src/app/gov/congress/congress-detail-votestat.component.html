@@ -1,0 +1,31 @@
+<div class="gauges-container">
+  <br />
+  <br />
+  <table border="0" class="gaugeTable" align="center;">
+    <tr>
+      <th>
+        <ngx-gauge
+          [type]="gaugeType"
+          [value]="partyGaugeValue"
+          [label]="partyGaugeLabel"
+          [append]="partyGaugeAppendText"
+          [foregroundColor]="partyGaugeForegroundColor"
+        >
+        </ngx-gauge>
+      </th>
+      <th>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+      </th>
+      <th>
+        <ngx-gauge
+          [type]="gaugeType"
+          [value]="gaugeValue"
+          [label]="gaugeLabel"
+          [append]="gaugeAppendText"
+          [foregroundColor]="gaugeForegroundColor"
+        >
+        </ngx-gauge>
+      </th>
+    </tr>
+  </table>
+</div>

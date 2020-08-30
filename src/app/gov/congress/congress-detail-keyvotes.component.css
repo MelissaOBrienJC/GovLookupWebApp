@@ -1,0 +1,18 @@
+.yeanay {
+  max-width: 100%;
+  max-height: 100%;
+  display: inline-block;
+}
+.keyVotes {
+  font-family: "Poppins", sans-serif;
+}
+
+.yesVote {
+  color: green;
+  font-weight: bold;
+}
+
+.noVote {
+  color: #e60000;
+  font-weight: bold;
+}

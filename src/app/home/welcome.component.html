@@ -1,0 +1,83 @@
+﻿<header class="masthead">
+  <div class="container">
+    <div class="intro-text">
+      <button
+        class="btn btn-primary btn-xl text-uppercase"
+        [ngx-scroll-to]="'#getstarted'"
+      >
+        Get started
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="main">
+  <div id="getstarted" #getstarted></div>
+  <aside>
+    <div class="content cabinet">
+      <h3><a href="/cabinet">Cabinet</a></h3>
+      <p>Cabinet members of the current administration.</p>
+    </div>
+  </aside>
+  <aside>
+    <div class="content congress">
+      <h3><a href="/legislators">Legislators</a></h3>
+      <p>Search for senators and members of congress.</p>
+    </div>
+  </aside>
+  <aside>
+    <div class="content judiciary{{ selectedJustice }}">
+      <h3><a href="/judiciary">Justices</a></h3>
+      <p>Supreme court justices, key decisions and opinions.</p>
+    </div>
+  </aside>
+</section>
+
+<section class="bills">
+  <article>
+    <a class="whitelink" title="bills" href="/bills"
+      ><h2>Bills under consideration</h2></a
+    >
+    <p>Get information on bills that are being considered by congress.</p>
+  </article>
+</section>
+<section class="other-links">
+  <aside>
+    <div class="content">
+      <img alt="register to vote" src="assets/register.jpg" />
+      <h4>Register to vote</h4>
+      <p>It takes less than 2 minutes to register.</p>
+      <a title="Register to vote." href="https://www.vote.org/register-to-vote/"
+        >Register to Vote</a
+      >
+    </div>
+  </aside>
+  <aside>
+    <div class="content">
+      <img alt="town hall project" src="assets/townhall.png" />
+      <h4>Town Hall project</h4>
+      <p>Show up. Speak Out.</p>
+      <a title="Town hall project." href="https://townhallproject.com/"
+        >Find a town hall now</a
+      >
+    </div>
+  </aside>
+  <blockquote>
+    <p class="quote">{{ selectedQuote.text }}</p>
+    <p class="credit">
+      <strong>{{ selectedQuote.author }}</strong>
+    </p>
+  </blockquote>
+</section>
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <span class="copyright">Copyright &copy; GovLookup 2020</span>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+</footer>

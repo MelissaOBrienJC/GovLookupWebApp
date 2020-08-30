@@ -1,0 +1,86 @@
+<p-dataView #dv [value]="keyDecisions" [paginator]="false" filterBy="issue">
+  <p-header>
+  </p-header>
+  <ng-template let-decision pTemplate="listItem">
+    <div class="ui-g" style="padding: 1em; border-bottom: 1px solid #d9d9d9;">
+      <div class="ui-g-12 ui-md-2" style="text-align: center;">
+        <section>
+          <div class="votedText">
+            {{
+              decision.voteCast == "dissent"
+                ? "VOTED WITH"
+                : decision.voteCast == "majority"
+                ? "VOTED WITH"
+                : ""
+            }}<br />
+          </div>
+          <div class="minorityVote">
+            <div *ngIf="decision.voteCast == 'dissent'; else majority">
+              MINORITY
+
+              <br />
+              <br />
+              <div class="minorityTallyText">{{ decision.tally }} <br /></div>
+            </div>
+          </div>
+
+          <ng-template #majority>
+            <div class="majorityVote">
+              MAJORITY
+            </div>
+            <br />
+            <div class="majorityTallyText">{{ decision.tally }} <br /></div>
+          </ng-template>
+
+          <br />
+
+          <div class="votedDateText">
+            {{ decision.decisionDate | date: "shortDate" }}
+          </div>
+        </section>
+      </div>
+      <div class="ui-g-12 ui-md-10 keyVotes">
+        <div class="ui-g">
+          {{ decision.titleDesc }}
+        </div>
+        <div class="ui-g-12 ui-sm-12 billTitle">{{ decision.title }}:</div>
+        <div class="ui-g-12 ui-sm-12">{{ decision.description }}</div>
+        <div class="row">
+          <div *ngFor="let rollCall of decision.rollCallDecision">
+            <img
+              alt="judge vote"
+              src="../../assets/judiciary/SC{{
+                rollCall.voteCast == 'dissent' ? 'FADE' : ''
+              }}_{{ rollCall.judiciaryId }}.jpg"
+              onerror="this.src='./../assets/judiciary/person.jpg'"
+              class="img-thumbnail{{
+                rollCall.voteCast == 'majority' ? 'Majority' : 'White'
+              }}"
+              width="72px"
+              height="90px"
+            />
+            &nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template let-vote pTemplate="gridItem">
+    <div style="padding: 0.5em;" class="ui-g-12 ui-md-3">
+      <p-panel [header]="decision.title" [style]="{ 'text-align': 'center' }">
+        <img
+          alt="vote caste"
+          src="assets/{{ decision.voteCast }}.png"
+          width="30"
+        />
+
+        <div class="vote-detail">
+          {{ decision.title }}<br />{{
+            decision.decision_date | date: "shortDate"
+          }}
+        </div>
+        <hr class="ui-widget-content" style="border-top: 0;" />
+      </p-panel>
+    </div>
+  </ng-template>
+</p-dataView>

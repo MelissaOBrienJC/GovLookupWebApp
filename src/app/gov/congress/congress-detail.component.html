@@ -1,0 +1,192 @@
+<div class="container-fluid" style="padding-top: 40px; padding-bottom: 20px;">
+  <div *ngIf="legislator !== null">
+    <div class="row">
+      <!--containing row-->
+
+      <div class="col-sm-9" style="padding-left: 40px;">
+        <!--first 9 col for image and info -->
+
+        <div class="row">
+          <div class="col-sm-3">
+            <!--first 3 col for image -->
+            <img
+              class="govlookup-img"
+              src="../../assets/legislators/{{ legislator.id }}.jpg"
+              alt="legislator picture"
+              onerror="this.src='./../assets/legislators/person.jpg'"
+            />
+          </div>
+          <div class="col-sm-6">
+            <!--next  6 col for info -->
+            <section>
+              <div class="ui-grid-row">
+                <h3 class="detail-name-header">
+                  {{ legislator.firstName }} {{ legislator.lastName }}
+                  <span class="next-election"
+                    >Up for election in {{ legislator.nextElection }}</span
+                  >
+                </h3>
+              </div>
+              <div class="ui-grid-row">
+                <h6 class="govlookup-detail-text">
+                  {{ legislator.leadershipRole }}
+                </h6>
+              </div>
+              <div class="ui-grid-row">
+                <h6 class="govlookup-detail-text">
+                  <div
+                    *ngIf="legislator.chamber === 'House'; else stateNameOnly"
+                  >
+                    {{
+                      legislator.gender === "F"
+                        ? "Congresswoman"
+                        : "Congressman"
+                    }}
+                    {{ legislator.stateName }} District No.
+                    {{ legislator.district }}
+                  </div>
+                  <ng-template #stateNameOnly>
+                    Senator {{ legislator.stateName }}
+                  </ng-template>
+                </h6>
+              </div>
+              <div class="ui-grid-row">
+                <div class="ui-grid-col-12 for-font-size">
+                  <h6 class="govlookup-detail-text">
+                    <img
+                      class="partyicon"
+                      alt="party"
+                      src="../../assets/party_{{
+                        legislator.party === 'D'
+                          ? 'democrat'
+                          : legislator.party === 'R'
+                          ? 'republican'
+                          : 'independant'
+                      }}_small_gray.png"
+                    />
+                    {{
+                      legislator.party === "D"
+                        ? "Democrat"
+                        : legislator.party === "R"
+                        ? "Republican"
+                        : "Independant"
+                    }}
+                  </h6>
+                </div>
+              </div>
+              <div class="ui-grid-row">
+                <div class="ui-grid-col-12 for-font-size">
+                  <h6 class="govlookup-detail-text">
+                    <span class="fa fa-phone fa-fw" aria-label="phone"></span
+                    >{{ legislator.phone }}
+                  </h6>
+                </div>
+              </div>
+              <div class="ui-grid-row">
+                <a
+                  aria-label="facebook"
+                  class="fa fa-facebook-square"
+                  href="https://www.facebook.com/{{
+                    legislator.facebookAccount
+                  }}/"
+                  style="font-size: 36px;"
+                ></a>
+                <a
+                  aria-label="twitter"
+                  class="fa fa-twitter-square"
+                  href="https://twitter.com/{{ legislator.twitterAccount }}/"
+                  style="font-size: 36px;"
+                ></a>
+                <a
+                  aria-label="youtube"
+                  class="fa fa-youtube-square"
+                  href="https://www.youtube.com/{{
+                    legislator.youtubeAccount
+                  }}/"
+                  style="font-size: 36px;"
+                ></a>
+                <a
+                  aria-label="legislator website"
+                  class="fa fa-external-link-square"
+                  href="{{ legislator.url }}"
+                  style="font-size: 36px;"
+                ></a>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="row" style="padding-top: 40px;">
+          <!--in next  row use all 9 columns for tab control -->
+          <br />
+          <br />
+          <br />
+          <br />
+          <section>
+            <div class="panel-body">
+              <p-tabMenu [model]="items" [activeItem]="items[0]"></p-tabMenu>
+              <router-outlet></router-outlet>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="col-sm-3" style="padding-right: 40px;">
+        <!--last 3 columns for ratings and industry pie chart -->
+        <section>
+          <p-table
+            #dtRatings
+            [value]="legislator.ratings"
+            class="wrap"
+            tableStyleClass="prime-table"
+          >
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Group</th>
+                <th>Rating</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rating>
+              <tr>
+                <td width="50px">
+                  <a href="{{ rating.link }}" class="rating-link">
+                    {{ rating.organization }}
+                  </a>
+                </td>
+                <td width="25px" class="ratings-value">
+                  <div
+                    *ngIf="
+                      rating.organizationCode === 'bc';
+                      else ratingValueOnly
+                    "
+                  >
+                    <img
+                      src="assets/ratings/bc_{{
+                        rating.ratingValue
+                      }}_sm.png"
+                      alt="rating"
+                    />
+                  </div>
+                  <ng-template #ratingValueOnly>
+                    {{ rating.ratingValue }}
+                  </ng-template>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </section>
+        <section>
+          <div class="divider-10"></div>
+          <p-chart
+            type="pie"
+            [data]="this.legislator.industryFinanceChart"
+            [options]="chartOptions"
+            width="300px"
+            height="300px"
+            [responsive]="false"
+          ></p-chart>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

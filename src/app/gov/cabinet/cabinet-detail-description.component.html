@@ -1,0 +1,50 @@
+<br />
+<div class="row">
+  <div class="col-sm-5">
+    Assumed Office:
+  </div>
+  <div class="col-sm-7">
+    {{ cabinetMember.assumedOffice | date: "MM/dd/yyyy" }}
+  </div>
+  <br />
+  <br />
+</div>
+
+<div class="row">
+  <div class="col-sm-5">
+    Former Position:
+  </div>
+  <div class="col-sm-7">
+    {{ cabinetMember.formerPosition }}
+  </div>
+  <br />
+  <br />
+</div>
+<div class="row">
+  <div class="col-sm-5">
+    Born:
+  </div>
+  <div class="col-sm-7">
+    {{ cabinetMember.dateOfBirth | date: "MM/dd/yyyy" }}
+    {{ cabinetMember.birthLocation }}
+  </div>
+</div>
+<br />
+
+<div class="row">
+  <div class="col-sm-5">
+    Education:
+  </div>
+
+  <div class="col-sm-7">
+    <p-table [value]="cabinetMember.education">
+      <ng-template pTemplate="body" let-edu>
+        <tr>
+          <td>{{ edu.schoolName }} {{ edu.degree }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  <br />
+  <br />
+</div>

@@ -1,0 +1,47 @@
+<p-dataView
+  #dv
+  id="dvBills"
+  [value]="bills"
+  [paginator]="false"
+  filterBy="sponsorType"
+>
+  <p-header>
+    <div class="ui-helper-clearfix">
+      <div class="ui-g">
+        <div class="ui-g-6 ui-md-4 filter-container">
+          <div style="position: relative;">
+            <p-dropdown
+              [options]="this.sponsorTypes"
+              (onChange)="dv.filter($event.value)"
+              placeholder="Filter by"
+            ></p-dropdown>
+          </div>
+        </div>
+        <div class="ui-g-6 ui-md-8" style="text-align: right;"></div>
+      </div>
+    </div>
+  </p-header>
+  <ng-template let-bill pTemplate="listItem">
+    <div class="ui-g" style="padding: 1em; border-bottom: 1px solid #d9d9d9;">
+      <div class="ui-g-12 ui-md-10 keyVotes">
+        <div class="ui-g">
+          <div class="ui-g-12 ui-sm-12 govlookup-item-title">
+            {{ bill.shortTitle }} {{ bill.billId != null ? bill.billId : "" }}
+          </div>
+
+          <div class="ui-g-12 ui-sm-12">
+            Status: {{ bill.latestMajorAction }}
+          </div>
+
+          <div class="ui-g-12 ui-sm-12">
+            Sponsor:<strong
+              [ngClass]="bill.sponsorType === 'S' ? 'sponsor' : 'cosponsor'"
+            >
+              {{ bill.sponsorName }}</strong
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-dataView>

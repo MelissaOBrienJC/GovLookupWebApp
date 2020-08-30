@@ -1,0 +1,52 @@
+.votedText {
+  color: rgba(117, 117, 117, 1);
+  font-size: small;
+}
+.votedDateText {
+  color: rgba(117, 117, 117, 1);
+  font-size: medium;
+}
+
+.minorityTallyText {
+  color: #eb0000;
+  font-size: x-large;
+}
+
+.majorityTallyText {
+  color: green;
+  font-size: x-large;
+}
+
+.ui-grid-col-12 for-font-size {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: small;
+}
+
+.minorityVote {
+  color: #eb0000;
+  font-size: 1em;
+}
+
+.majorityVote {
+  color: green;
+  font-size: 1em;
+}
+
+.ui-dataview .ui-dataview-content {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  padding: 5px 0 0 0;
+  margin: 30px 0;
+  line-height: 20px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+}
+
+section {
+  max-width: 100%;
+}
+
+.keyVotes {
+  font-family: "Poppins", sans-serif;
+}

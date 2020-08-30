@@ -1,0 +1,79 @@
+
+
+.next-election {
+  color: white;
+  background-color: rgba(219, 58, 0, 1);
+  margin-left: 20px;
+  font-size: small;
+}
+
+.ui-grid-col-12 for-font-size {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: small;
+}
+
+
+.ui-table table {
+  table-layout: auto !important;
+}
+
+.divider-10 {
+  width: 100%;
+  min-height: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.ratings-value {
+  color: darkslategray;
+
+  font-size: medium;
+  text-align: center;
+}
+.ui-dataview .ui-dataview-content {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  padding: 5px 0 0 0;
+  margin: 30px 0;
+  line-height: 20px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+}
+.ratings-header {
+  text-align: center;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.75em;
+  color: grey;
+}
+
+.ui-dataview-header {
+  text-align: center;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+section {
+  max-width: 100%;
+}
+
+.partyicon {
+  background-size: 25px 25px;
+}
+
+.prime-table {
+  font-size: 0.8em;
+}
+.rating-link {
+  color: #026fcf;
+}
+
+.wrap {
+  white-space: normal;
+}
+/* .rating-link:hover {color: #0f0;} */
+.fa {
+  padding-right: 5px;
+}

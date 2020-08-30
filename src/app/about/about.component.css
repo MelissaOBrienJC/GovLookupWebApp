@@ -1,0 +1,30 @@
+.top-buffer {
+  margin-top: 30px;
+}
+.text-top-buffer {
+  margin-top: 20px;
+}
+.me {
+  padding: 1em;
+}
+
+.table-condensed {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  color:  #50555c;
+}
+
+.blurb {
+  color:  #50555c;
+}
+.text-heading{
+  color:darkslategray;
+}
+
+.fa-github-square{
+  font-size: 30px;
+}
+.smallText{
+  font-size: 14px;
+}

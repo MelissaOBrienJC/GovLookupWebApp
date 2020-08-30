@@ -1,0 +1,17 @@
+<p-dataView #dvc id="dvCommittees" [value]="committees" [paginator]="false">
+  <p-header> </p-header>
+  <ng-template let-committee pTemplate="listItem">
+    <div class="ui-g" style="padding: 1em; border-bottom: 1px solid #d9d9d9;">
+      <div class="ui-g-12 ui-md-10 keyVotes">
+        <div class="ui-g">
+          <div class="ui-g-12 ui-sm-12">
+            {{ committee.name }}
+            <strong [ngClass]="'committeeTitle'">
+              {{ committee.title === "Chair" ? committee.title : "" }}
+            </strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-dataView>
