@@ -15,6 +15,6 @@ Angular Web Application that displays data for U.S. Legislators, Cabinet and Jud
  Angular			: 8.2.14 
  Node			: 12.16.1
  Primeng			: 8.1.1
- Typescript			: 3.5.3
+ Typescript		: 3.5.3
 
  ```
