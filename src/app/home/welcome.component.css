@@ -242,7 +242,7 @@ section.other-links blockquote p.credit::before {
 
 footer {
   background-color: black;
-  padding: 10px 0;
+  padding: 5px;
   text-align: center;
 }
 footer span.copyright {
