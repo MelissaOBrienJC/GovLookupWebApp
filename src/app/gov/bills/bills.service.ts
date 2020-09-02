@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ICurrentBillsyDto } from './bills';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class BillsService {
@@ -9,7 +10,7 @@ export class BillsService {
 
   _bills: ICurrentBillsyDto[];
 
-  private _govLookupBillsUrl = 'https://govlookupwebapi.mobdemo.org:443/api/bills';
+  private _govLookupBillsUrl = environment.baseUrl +  '/api/bills';
 
   constructor(private _http: HttpClient) { }
 

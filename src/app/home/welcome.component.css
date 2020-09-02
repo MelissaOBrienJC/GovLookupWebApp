@@ -1,8 +1,7 @@
 ﻿header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url(assets/capitol.jpg) no-repeat center
-    center;
+  background: url(assets/capitol.jpg) no-repeat center center;
   text-align: center;
   color: #fff;
   background-image: url(assets/capitol.jpg);
@@ -243,7 +242,7 @@ section.other-links blockquote p.credit::before {
 
 footer {
   background-color: black;
-  padding: 25px 0;
+  padding: 10px 0;
   text-align: center;
 }
 footer span.copyright {
@@ -252,7 +251,23 @@ footer span.copyright {
   text-transform: none;
 }
 
-a.whitelink:link { color:#FFF; text-decoration:none; font-weight:normal; }
-a.whitelink:visited { color: #FFF; text-decoration:none; font-weight:normal; }
-a.whitelink:hover { color: #FFF; text-decoration:underline; font-weight:normal; }
-a.whitelink:active { color: #FFF; text-decoration:none; font-weight:normal; }
+a.whitelink:link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+}
+a.whitelink:visited {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+}
+a.whitelink:hover {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: normal;
+}
+a.whitelink:active {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+}

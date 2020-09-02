@@ -2,70 +2,71 @@
 
 
 import { Injectable, OnDestroy } from '@angular/core';
-import { ICabinetSummaryDto, ICabinetDetailDto  } from './cabinet';
+import { ICabinetSummaryDto, ICabinetDetailDto } from './cabinet';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
-export class  CabinetService   {
+export class CabinetService {
 
 
-    _cabinetMember: ICabinetDetailDto;
-    _cabinetMembers: ICabinetSummaryDto[];
+  _cabinetMember: ICabinetDetailDto;
+  _cabinetMembers: ICabinetSummaryDto[];
 
-    private _govLookupcabinetUrl = 'https://govlookupwebapi.mobdemo.org:443/api/cabinet';
+  private _govLookupcabinetUrl = environment.baseUrl + '/api/cabinet';
 
-    constructor( private _http: HttpClient ){  }
+  constructor(private _http: HttpClient) { }
 
-      /*-----------------------------------------------------------------------
-      --  getCabinetMembersFromService
-      -----------------------------------------------------------------------*/
-      public getCabinetMembersFromService() {
-          return this._cabinetMembers;
-      }
+  /*-----------------------------------------------------------------------
+  --  getCabinetMembersFromService
+  -----------------------------------------------------------------------*/
+  public getCabinetMembersFromService() {
+    return this._cabinetMembers;
+  }
 
-      /*-----------------------------------------------------------------------
-      --  getCabinetMemberFromService
-      -----------------------------------------------------------------------*/
-      public getCabinetMemberFromService(){
-          return this._cabinetMember;
-      }
+  /*-----------------------------------------------------------------------
+  --  getCabinetMemberFromService
+  -----------------------------------------------------------------------*/
+  public getCabinetMemberFromService() {
+    return this._cabinetMember;
+  }
 
-     /*-----------------------------------------------------------------------
-      --  getJobHistotyFromService
-      -----------------------------------------------------------------------*/
-      public getJobHistoryFromService(){
-        return this._cabinetMember.jobHistory;
-    }
+  /*-----------------------------------------------------------------------
+   --  getJobHistotyFromService
+   -----------------------------------------------------------------------*/
+  public getJobHistoryFromService() {
+    return this._cabinetMember.jobHistory;
+  }
 
 
-      /*-----------------------------------------------------------------------
-      --  setCabinetMembers - store in service
-      -----------------------------------------------------------------------*/
-      public setCabinetMembers(cabinetMembers: ICabinetSummaryDto[]): void {
-          this._cabinetMembers = cabinetMembers;
-      }
+  /*-----------------------------------------------------------------------
+  --  setCabinetMembers - store in service
+  -----------------------------------------------------------------------*/
+  public setCabinetMembers(cabinetMembers: ICabinetSummaryDto[]): void {
+    this._cabinetMembers = cabinetMembers;
+  }
 
-      /*-----------------------------------------------------------------------
-      --  setCabinetMember - store in service
-      -----------------------------------------------------------------------*/
-      public setCabinetMember(cabinetMember: ICabinetDetailDto): void {
-          this._cabinetMember = cabinetMember;
-      }
+  /*-----------------------------------------------------------------------
+  --  setCabinetMember - store in service
+  -----------------------------------------------------------------------*/
+  public setCabinetMember(cabinetMember: ICabinetDetailDto): void {
+    this._cabinetMember = cabinetMember;
+  }
 
-    /*-----------------------------------------------------------------------
-    --  getCabinetMembers calls backend web service returns observable CabinetResponse
-    -----------------------------------------------------------------------*/
+  /*-----------------------------------------------------------------------
+  --  getCabinetMembers calls backend web service returns observable CabinetResponse
+  -----------------------------------------------------------------------*/
 
-        getCabinetMembersFromWebApi()   {
-          return    this._http.get<ICabinetSummaryDto[]>(this._govLookupcabinetUrl );
-        }
+  getCabinetMembersFromWebApi() {
+    return this._http.get<ICabinetSummaryDto[]>(this._govLookupcabinetUrl);
+  }
 
-      /*-----------------------------------------------------------------------
-      --  getLCabinetMembercalls backend web service returns observable of Cabinet
-      -----------------------------------------------------------------------*/
-      getCabinetMemberFromWebApi(id: string) {
-           return     this._http.get<ICabinetDetailDto>(this._govLookupcabinetUrl + '/' + id);
-      }
+  /*-----------------------------------------------------------------------
+  --  getLCabinetMembercalls backend web service returns observable of Cabinet
+  -----------------------------------------------------------------------*/
+  getCabinetMemberFromWebApi(id: string) {
+    return this._http.get<ICabinetDetailDto>(this._govLookupcabinetUrl + '/' + id);
+  }
 
 
 

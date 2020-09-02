@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IJudiciaryDetailDto, IJudiciarySummaryDto, IKeyDecisionsDto, IKeyDecisionsOpinionsDto } from './judiciary';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class JudiciaryService {
@@ -9,7 +10,7 @@ export class JudiciaryService {
   _judge: IJudiciaryDetailDto;
   _judges: IJudiciarySummaryDto[];
 
-  private _govLookupjudiciaryUrl = 'https://govlookupwebapi.mobdemo.org:443/api/judiciary';
+  private _govLookupjudiciaryUrl = environment.baseUrl + '/api/judiciary';
 
   constructor(private _http: HttpClient) { }
 

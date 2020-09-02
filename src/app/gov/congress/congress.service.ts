@@ -1,7 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { ILegislatorSummaryDto, ILegislatorDetailDto, IKeyVoteDto, ICommitteeDto, IVoteStatDto, IBillDto } from './legislator';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class CongressService   {
@@ -10,8 +10,7 @@ export class CongressService   {
     _legislator: ILegislatorDetailDto;
     _legislators:  ILegislatorSummaryDto[];
 
-    private _govLookuplegislatorUrl = 'https://govlookupwebapi.mobdemo.org:443/api/legislators';
-
+    private _govLookuplegislatorUrl = environment.baseUrl + '/api/legislators';
 
 
     constructor( private _http: HttpClient){  }
