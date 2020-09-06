@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 import { MenuItem, MessageService } from 'primeng/api';
 import { IJudiciaryDetailDto, IJudiciarySummaryDto } from './judiciary';
 import { JudiciaryService } from './judiciary.service';
 
 @Component({
-  moduleId: module.id,
   styleUrls: ['judiciary-detail.component.css'],
   templateUrl: 'judiciary-detail.component.html',
   providers: [MessageService]

@@ -4,8 +4,7 @@ import { CongressService } from './congress.service';
 import {SelectItem} from 'primeng/api';
 
 @Component ({
-    moduleId: module.id,
-    styleUrls: ['congress-detail-bills.component.css'],
+       styleUrls: ['congress-detail-bills.component.css'],
        templateUrl: 'congress-detail-bills.component.html',
     encapsulation: ViewEncapsulation.None,
     providers: []

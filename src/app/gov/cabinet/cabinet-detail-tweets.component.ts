@@ -3,7 +3,6 @@ import { ICabinetDetailDto } from './cabinet';
 import { CabinetService } from './cabinet.service';
 
 @Component({
-  moduleId: module.id,
   styleUrls: ['cabinet-detail-tweets.component.css'],
   templateUrl: 'cabinet-detail-tweets.component.html'
 

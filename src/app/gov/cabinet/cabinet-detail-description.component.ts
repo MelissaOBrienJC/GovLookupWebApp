@@ -3,7 +3,6 @@ import { ICabinetDetailDto } from './cabinet';
 import { CabinetService } from './cabinet.service';
 
 @Component({
-  moduleId: module.id,
   styleUrls: [],
   templateUrl: 'cabinet-detail-description.component.html'
 

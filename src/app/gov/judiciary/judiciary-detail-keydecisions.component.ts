@@ -1,11 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MenuItem } from 'primeng/api';
 import { IKeyDecisionsDto } from './judiciary';
 import { JudiciaryService } from './judiciary.service';
 
 @Component({
-  moduleId: module.id,
   styleUrls: ['judiciary-detail-keydecisions.component.css'],
   templateUrl: 'judiciary-detail-keydecisions.component.html',
   encapsulation: ViewEncapsulation.None

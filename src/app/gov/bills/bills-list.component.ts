@@ -6,7 +6,6 @@ import { ICurrentBillsyDto } from './bills';
 import { BillsService } from './bills.service';
 
 @Component({
-  moduleId: module.id,
   templateUrl: 'bills-list.component.html',
   encapsulation: ViewEncapsulation.None
 

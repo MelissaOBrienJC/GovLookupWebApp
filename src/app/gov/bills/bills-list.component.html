@@ -5,170 +5,165 @@
 
     <div *ngIf="showDataList">
       <div *ngIf="bills">
-        <p-dataList
+        <p-dataView
           [value]="bills"
           [paginator]="false"
-          [rows]="5"
-          class="mx-auto"
           emptyMessage="{{ emptyMessage }}"
         >
-          <p-header> Bills Under Consideration </p-header>
-          <div class="mx-auto">
-            <ng-template let-bills pTemplate="item">
-              <div
-                class="ui-grid ui-grid-responsive ui-fluid"
-                style="
-                  font-size: 16px;
-                  padding: 20px;
-                  border-bottom: 1px solid #d5d5d5;
-                "
-              >
-                <div class="ui-grid-row">
-                  <div class="ui-grid-col-3" style="text-align: center">
-                    <img
-                      src="../../assets/bills.png"
-                      alt="bill"
-                      class="img-thumbnail"
-                      width="80px"
-                      height="136px"
-                    />
-                  </div>
+          <p-header>
+            <div class="text-center">Bills Under Consideration</div>
+          </p-header>
 
+          <ng-template let-bills pTemplate="listItem">
+            <div
+              class="ui-grid ui-grid-responsive ui-fluid"
+              style="
+                font-size: 16px;
+                padding: 20px;
+                border-bottom: 1px solid #d5d5d5;
+              "
+            >
+              <div class="ui-grid-row">
+                <div class="ui-grid-col-3" style="text-align: center">
+                  <img
+                    src="../../assets/bills.png"
+                    alt="bill"
+                    class="img-thumbnail"
+                    width="80px"
+                    height="136px"
+                  />
+                </div>
 
-                  <div class="ui-grid-col-8">
-                    <div class="ui-grid ui-grid-responsive ui-fluid">
-                      <div class="ui-grid-row">
-                        <h5 class="bill-name">
-                          <div class="ui-grid-col-12">
-                            {{ bills.timeFrame }}
-                          </div>
-                        </h5>
-                      </div>
-                      <div class="ui-grid-row">
+                <div class="ui-grid-col-8">
+                  <div class="ui-grid ui-grid-responsive ui-fluid">
+                    <div class="ui-grid-row">
+                      <h5 class="bill-name">
                         <div class="ui-grid-col-12">
-                          <div *ngIf="bills.Title !== null">
-                            {{ bills.title }}
-                          </div>
+                          {{ bills.timeFrame }}
+                        </div>
+                      </h5>
+                    </div>
+                    <div class="ui-grid-row">
+                      <div class="ui-grid-col-12">
+                        <div *ngIf="bills.Title !== null">
+                          {{ bills.title }}
                         </div>
                       </div>
-                      <div class="ui-grid-row">
-                        <div class="ui-grid-col-12">
-                          <div *ngIf="bills.number !== null">
-                            {{ bills.number }}
-                          </div>
+                    </div>
+                    <div class="ui-grid-row">
+                      <div class="ui-grid-col-12">
+                        <div *ngIf="bills.number !== null">
+                          {{ bills.number }}
                         </div>
                       </div>
+                    </div>
 
-                      <div class="ui-grid-row">
-                        <div class="ui-grid-col-12 for-font-size">
-                          <div *ngIf="bills.url !== null">
-                            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                    <div class="ui-grid-row">
+                      <div class="ui-grid-col-12 for-font-size">
+                        <div *ngIf="bills.url !== null">
+                          <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
 
-                            <a href="{{ bills.url }}"> PDF text of bill. </a>
-                          </div>
+                          <a href="{{ bills.url }}"> PDF text of bill. </a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </ng-template>
-          </div>
-        </p-dataList>
+            </div>
+          </ng-template>
+        </p-dataView>
       </div>
       <div *ngIf="!bills">
-        <p-dataList
+        <p-dataView
           [value]="generateSkeleton(2)"
           [paginator]="false"
-          [rows]="5"
-          class="mx-auto"
           emptyMessage="{{ emptyMessage }}"
         >
           <p-header><br /> </p-header>
-          <div class="mx-auto">
-            <ng-template let-skeleton pTemplate="item">
-              <div
-                class="ui-grid ui-grid-responsive ui-fluid"
-                style="
-                  font-size: 16px;
-                  padding: 10px;
-                  border-bottom: 1px solid #d5d5d5;
-                "
-              >
-                <div class="ui-grid-row">
-                  <div class="ui-grid-col-3" style="text-align: center">
-                    <i
-                      class="fa fa-search"
-                      style="cursor: pointer; float: left; margin-top: 40px"
-                    ></i>
-                    <ngx-skeleton-loader
-                      count="1"
-                      [theme]="{
-                        'border-radius': '0',
-                        height: '90px',
-                        width: '75px'
-                      }"
-                    ></ngx-skeleton-loader>
-                  </div>
 
-                  <div class="ui-grid-col-9">
-                    <div class="ui-grid ui-grid-responsive ui-fluid">
-                      <div class="ui-grid-row">
-                        <h5 class="judge-name">
-                          <ngx-skeleton-loader
-                            count="1"
-                            [theme]="{
-                              'border-radius': '0',
-                              height: '18px',
-                              width: '150px'
-                            }"
-                          ></ngx-skeleton-loader>
-                        </h5>
-                      </div>
-                      <div class="ui-grid-row">
-                        <div class="ui-grid-col-12">
-                          <ngx-skeleton-loader
-                            count="1"
-                            [theme]="{
-                              'border-radius': '0',
-                              height: '8px',
-                              width: '145px'
-                            }"
-                          ></ngx-skeleton-loader>
-                        </div>
-                      </div>
-                      <div class="ui-grid-row">
-                        <div class="ui-grid-col-12">
-                          <ngx-skeleton-loader
-                            count="1"
-                            [theme]="{
-                              'border-radius': '0',
-                              height: '8px',
-                              width: '180px'
-                            }"
-                          ></ngx-skeleton-loader>
-                        </div>
-                      </div>
+          <ng-template let-skeleton pTemplate="listItem">
+            <div
+              class="ui-grid ui-grid-responsive ui-fluid"
+              style="
+                font-size: 16px;
+                padding: 10px;
+                border-bottom: 1px solid #d5d5d5;
+              "
+            >
+              <div class="ui-grid-row">
+                <div class="ui-grid-col-3" style="text-align: center">
+                  <i
+                    class="fa fa-search"
+                    style="cursor: pointer; float: left; margin-top: 40px"
+                  ></i>
+                  <ngx-skeleton-loader
+                    count="1"
+                    [theme]="{
+                      'border-radius': '0',
+                      height: '90px',
+                      width: '75px'
+                    }"
+                  ></ngx-skeleton-loader>
+                </div>
 
-                      <div class="ui-grid-row">
-                        <div class="ui-grid-col-12">
-                          <ngx-skeleton-loader
-                            count="1"
-                            [theme]="{
-                              'border-radius': '0',
-                              height: '8px',
-                              width: '150px'
-                            }"
-                          ></ngx-skeleton-loader>
-                        </div>
+                <div class="ui-grid-col-9">
+                  <div class="ui-grid ui-grid-responsive ui-fluid">
+                    <div class="ui-grid-row">
+                      <h5 class="judge-name">
+                        <ngx-skeleton-loader
+                          count="1"
+                          [theme]="{
+                            'border-radius': '0',
+                            height: '18px',
+                            width: '150px'
+                          }"
+                        ></ngx-skeleton-loader>
+                      </h5>
+                    </div>
+                    <div class="ui-grid-row">
+                      <div class="ui-grid-col-12">
+                        <ngx-skeleton-loader
+                          count="1"
+                          [theme]="{
+                            'border-radius': '0',
+                            height: '8px',
+                            width: '145px'
+                          }"
+                        ></ngx-skeleton-loader>
+                      </div>
+                    </div>
+                    <div class="ui-grid-row">
+                      <div class="ui-grid-col-12">
+                        <ngx-skeleton-loader
+                          count="1"
+                          [theme]="{
+                            'border-radius': '0',
+                            height: '8px',
+                            width: '180px'
+                          }"
+                        ></ngx-skeleton-loader>
+                      </div>
+                    </div>
+
+                    <div class="ui-grid-row">
+                      <div class="ui-grid-col-12">
+                        <ngx-skeleton-loader
+                          count="1"
+                          [theme]="{
+                            'border-radius': '0',
+                            height: '8px',
+                            width: '150px'
+                          }"
+                        ></ngx-skeleton-loader>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </ng-template>
-          </div>
-        </p-dataList>
+            </div>
+          </ng-template>
+        </p-dataView>
       </div>
     </div>
   </div>

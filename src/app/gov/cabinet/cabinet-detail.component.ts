@@ -6,8 +6,7 @@ import { ICabinetDetailDto, ICabinetSummaryDto } from './cabinet';
 import { CabinetService } from './cabinet.service';
 
 @Component ({
-    moduleId: module.id,
-    styleUrls: ['cabinet-detail.component.css'],
+       styleUrls: ['cabinet-detail.component.css'],
        templateUrl: 'cabinet-detail.component.html',
        providers: [MessageService]
 

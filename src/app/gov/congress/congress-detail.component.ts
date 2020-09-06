@@ -12,7 +12,6 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  moduleId: module.id,
   styleUrls: ['congress-detail.component.css'],
   templateUrl: 'congress-detail.component.html',
 

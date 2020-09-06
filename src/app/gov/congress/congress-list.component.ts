@@ -1,17 +1,14 @@
 import { Component, OnInit , ViewEncapsulation, PipeTransform, OnDestroy }  from '@angular/core';
 import { ILegislatorSummaryDto, ILegislatorDetailDto} from './legislator';
 import { CongressService }  from './congress.service';
-import { DataListModule, InputTextModule } from 'primeng/primeng';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import {Subscription} from 'rxjs';
+import { DomSanitizer} from '@angular/platform-browser';
+import { Subscription} from 'rxjs';
 import { Subject} from 'rxjs';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
-//import { CongressDataService }  from './congressdata.service';
 import {  ActivatedRoute } from '@angular/router';
 
 @Component ({
-    moduleId: module.id,
     templateUrl: 'congress-list.component.html',
     styleUrls: ['congress-list.component.css'],
     encapsulation: ViewEncapsulation.None,

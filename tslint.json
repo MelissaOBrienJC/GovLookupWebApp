@@ -1,4 +1,4 @@
-{
+npm audit fix{
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],

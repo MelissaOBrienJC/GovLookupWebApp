@@ -3,7 +3,6 @@ import { IKeyDecisionsOpinionsDto } from './judiciary';
 import { JudiciaryService } from './judiciary.service';
 
 @Component({
-  moduleId: module.id,
   styleUrls: ['judiciary-detail-keyopinions.component.css'],
   templateUrl: 'judiciary-detail-keyopinions.component.html',
   encapsulation: ViewEncapsulation.None

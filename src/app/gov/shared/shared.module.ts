@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
-import { DataListModule, ChartModule } from 'primeng/primeng';
+import { ChartModule } from 'primeng/chart';
 import { AccordionModule } from 'primeng/accordion';
 import { DataViewModule } from 'primeng/dataview';
 
@@ -33,7 +33,7 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
   exports: [
 
     FormsModule,
-    DataListModule,
+    DataViewModule,
     TabMenuModule,
     TableModule,
     ChartModule,

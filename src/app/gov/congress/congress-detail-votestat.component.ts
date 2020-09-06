@@ -6,8 +6,7 @@ import { Location } from '@angular/common';
 
 
 @Component ({
-    moduleId: module.id,
-    styleUrls: ['congress-detail-votestat.component.css'],
+       styleUrls: ['congress-detail-votestat.component.css'],
        templateUrl: 'congress-detail-votestat.component.html',
 
     encapsulation: ViewEncapsulation.None,

@@ -1,4 +1,4 @@
-<div class="container" style="padding-top: 40px; padding-bottom: 20px;">
+<div class="container" style="padding-top: 40px; padding-bottom: 20px">
   <div class="row">
     <div class="mx-auto">
       <form name="Location">
@@ -24,231 +24,219 @@
     </div>
   </div>
 </div>
-<div style="width: 50%; margin: 0 auto;">
+<div style="width: 50%; margin: 0 auto">
   <div class="mx-auto">
-     <div *ngIf="showDataList">
+    <div *ngIf="showDataList">
       <div *ngIf="legislators">
-        <p-dataList
+        <p-dataView
           [value]="legislators"
           [paginator]="false"
-          [rows]="5"
-          class="mx-auto"
           emptyMessage="{{ emptyMessage }}"
         >
-          <p-header>
-            List of Legislators
-          </p-header>
-          <div class="mx-auto">
-            <ng-template let-legislator pTemplate="item">
-              <div
-                class="ui-grid ui-grid-responsive ui-fluid"
-                style="
-                  font-size: 16px;
-                  padding: 5px;
-                  border-bottom: 1px solid #d5d5d5;
-                "
-              >
-                <div class="ui-grid-row">
-                  <div class="ui-grid-col-3" style="text-align: center;">
-                    <i
-                      class="fa fa-search"
-                      (click)="selectLegislator(legislator)"
-                      style="cursor: pointer; float: left; margin-top: 40px;"
-                    ></i>
-                    <img
-                      alt="legislator picture"
-                      src="../../assets/legislators/{{ legislator.id }}.jpg"
-                      onerror="this.src='./../assets/legislators/person.jpg'"
-                      (click)="selectLegislator(legislator)"
-                      class="img-thumbnail"
-                      width="80px"
-                      height="136px"
-                    />
-                  </div>
+          <p-header><div class="text-center">Legislators</div> </p-header>
 
-                  <div
-                    class="ui-grid-col-9"
+          <ng-template let-legislator pTemplate="listItem">
+            <div
+              class="ui-grid ui-grid-responsive ui-fluid"
+              style="
+                font-size: 16px;
+                padding: 5px;
+                border-bottom: 1px solid #d5d5d5;
+              "
+            >
+              <div class="ui-grid-row">
+                <div class="ui-grid-col-3" style="text-align: center">
+                  <i
+                    class="fa fa-search"
                     (click)="selectLegislator(legislator)"
-                  >
-                    <div class="ui-grid ui-grid-responsive ui-fluid">
-                      <div class="ui-grid-row">
-                        <h5 class="legislator-name">
-                          <div class="ui-grid-col-12">
-                            {{ legislator.firstName }} {{ legislator.lastName }}
-                          </div>
-                        </h5>
-                      </div>
-                      <div
-                        class="ui-grid-row"
-                        (click)="selectLegislator(legislator)"
-                      >
+                    style="cursor: pointer; float: left; margin-top: 40px"
+                  ></i>
+                  <img
+                    alt="legislator picture"
+                    src="../../assets/legislators/{{ legislator.id }}.jpg"
+                    onerror="this.src='./../assets/legislators/person.jpg'"
+                    (click)="selectLegislator(legislator)"
+                    class="img-thumbnail"
+                    width="80px"
+                    height="136px"
+                  />
+                </div>
+
+                <div
+                  class="ui-grid-col-9"
+                  (click)="selectLegislator(legislator)"
+                >
+                  <div class="ui-grid ui-grid-responsive ui-fluid">
+                    <div class="ui-grid-row">
+                      <h5 class="legislator-name">
                         <div class="ui-grid-col-12">
-                          <div
-                            *ngIf="
-                              legislator.chamber === 'House';
-                              else stateNameOnly
-                            "
-                          >
-                            {{
-                              legislator.gender === "F"
-                                ? "Congresswoman"
-                                : "Congressman"
-                            }}
-                            {{ legislator.stateName }} District No.
-                            {{ legislator.district }}
-                          </div>
-                          <ng-template #stateNameOnly>
-                            Senator {{ legislator.stateName }}
-                          </ng-template>
+                          {{ legislator.firstName }} {{ legislator.lastName }}
                         </div>
-                      </div>
-                      <div
-                        class="ui-grid-row"
-                        (click)="selectLegislator(legislator)"
-                      >
-                        <div class="ui-grid-col-12 for-font-size">
-                          <img
-                            src="../../assets/party_{{
-                              legislator.party === 'D'
-                                ? 'democrat'
-                                : legislator.party === 'R'
-                                ? 'republican'
-                                : 'independant'
-                            }}_small.png"
-                            alt="party"
-                          />
-
+                      </h5>
+                    </div>
+                    <div
+                      class="ui-grid-row"
+                      (click)="selectLegislator(legislator)"
+                    >
+                      <div class="ui-grid-col-12">
+                        <div
+                          *ngIf="
+                            legislator.chamber === 'House';
+                            else stateNameOnly
+                          "
+                        >
                           {{
-                            legislator.party === "D"
-                              ? "Democrat"
-                              : legislator.party === "R"
-                              ? "Republican"
-                              : "Independant"
+                            legislator.gender === "F"
+                              ? "Congresswoman"
+                              : "Congressman"
                           }}
+                          {{ legislator.stateName }} District No.
+                          {{ legislator.district }}
                         </div>
+                        <ng-template #stateNameOnly>
+                          Senator {{ legislator.stateName }}
+                        </ng-template>
                       </div>
+                    </div>
+                    <div
+                      class="ui-grid-row"
+                      (click)="selectLegislator(legislator)"
+                    >
+                      <div class="ui-grid-col-12 for-font-size">
+                        <img
+                          src="../../assets/party_{{
+                            legislator.party === 'D'
+                              ? 'democrat'
+                              : legislator.party === 'R'
+                              ? 'republican'
+                              : 'independant'
+                          }}_small.png"
+                          alt="party"
+                        />
 
-                      <div
-                        class="ui-grid-row"
-                        (click)="selectLegislator(legislator)"
-                      >
-                        <div class="ui-grid-col-12 for-font-size">
-                          <span
-                            class="fa fa-phone legislator-icon fa-fw"
-                          ></span>
-                          {{ legislator.phone }}
-                        </div>
+                        {{
+                          legislator.party === "D"
+                            ? "Democrat"
+                            : legislator.party === "R"
+                            ? "Republican"
+                            : "Independant"
+                        }}
                       </div>
-                      <div class="ui-grid-row">
-                        <div class="ui-grid-col-12 for-font-size">
-                          <span class="fa fa-external-link fa-fw"></span>
-                          <a href="{{ legislator.url }}">
-                            {{ legislator.url }}</a
-                          >
-                        </div>
+                    </div>
+
+                    <div
+                      class="ui-grid-row"
+                      (click)="selectLegislator(legislator)"
+                    >
+                      <div class="ui-grid-col-12 for-font-size">
+                        <span class="fa fa-phone legislator-icon fa-fw"></span>
+                        {{ legislator.phone }}
+                      </div>
+                    </div>
+                    <div class="ui-grid-row">
+                      <div class="ui-grid-col-12 for-font-size">
+                        <span class="fa fa-external-link fa-fw"></span>
+                        <a href="{{ legislator.url }}"> {{ legislator.url }}</a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </ng-template>
-          </div>
-        </p-dataList>
+            </div>
+          </ng-template>
+        </p-dataView>
       </div>
 
       <div *ngIf="!legislators">
-        <p-dataList
+        <p-dataView
           [value]="generateSkeleton(3)"
           [paginator]="false"
-          [rows]="5"
-          class="mx-auto"
           emptyMessage="{{ emptyMessage }}"
         >
           <p-header><br /> </p-header>
-          <div class="mx-auto">
-            <ng-template let-skeleton pTemplate="item">
-              <div
-                class="ui-grid ui-grid-responsive ui-fluid"
-                style="
-                  font-size: 16px;
-                  padding: 10px;
-                  border-bottom: 1px solid #d5d5d5;
-                "
-              >
-                <div class="ui-grid-row">
-                  <div class="ui-grid-col-3" style="text-align: center;">
-                    <i
-                      class="fa fa-search"
-                      style="cursor: pointer; float: left; margin-top: 40px;"
-                    ></i>
-                    <ngx-skeleton-loader
-                      count="1"
-                      [theme]="{
-                        'border-radius': '0',
-                        height: '90px',
-                        width: '75px'
-                      }"
-                    ></ngx-skeleton-loader>
-                  </div>
 
-                  <div class="ui-grid-col-9">
-                    <div class="ui-grid ui-grid-responsive ui-fluid">
-                      <div class="ui-grid-row">
-                        <h5 class="judge-name">
-                          <ngx-skeleton-loader
-                            count="1"
-                            [theme]="{
-                              'border-radius': '0',
-                              height: '18px',
-                              width: '150px'
-                            }"
-                          ></ngx-skeleton-loader>
-                        </h5>
-                      </div>
-                      <div class="ui-grid-row">
-                        <div class="ui-grid-col-12">
-                          <ngx-skeleton-loader
-                            count="1"
-                            [theme]="{
-                              'border-radius': '0',
-                              height: '8px',
-                              width: '145px'
-                            }"
-                          ></ngx-skeleton-loader>
-                        </div>
-                      </div>
-                      <div class="ui-grid-row">
-                        <div class="ui-grid-col-12">
-                          <ngx-skeleton-loader
-                            count="1"
-                            [theme]="{
-                              'border-radius': '0',
-                              height: '8px',
-                              width: '180px'
-                            }"
-                          ></ngx-skeleton-loader>
-                        </div>
-                      </div>
+          <ng-template let-skeleton pTemplate="listItem">
+            <div
+              class="ui-grid ui-grid-responsive ui-fluid"
+              style="
+                font-size: 16px;
+                padding: 10px;
+                border-bottom: 1px solid #d5d5d5;
+              "
+            >
+              <div class="ui-grid-row">
+                <div class="ui-grid-col-3" style="text-align: center">
+                  <i
+                    class="fa fa-search"
+                    style="cursor: pointer; float: left; margin-top: 40px"
+                  ></i>
+                  <ngx-skeleton-loader
+                    count="1"
+                    [theme]="{
+                      'border-radius': '0',
+                      height: '90px',
+                      width: '75px'
+                    }"
+                  ></ngx-skeleton-loader>
+                </div>
 
-                      <div class="ui-grid-row">
-                        <div class="ui-grid-col-12">
-                          <ngx-skeleton-loader
-                            count="1"
-                            [theme]="{
-                              'border-radius': '0',
-                              height: '8px',
-                              width: '150px'
-                            }"
-                          ></ngx-skeleton-loader>
-                        </div>
+                <div class="ui-grid-col-9">
+                  <div class="ui-grid ui-grid-responsive ui-fluid">
+                    <div class="ui-grid-row">
+                      <h5 class="judge-name">
+                        <ngx-skeleton-loader
+                          count="1"
+                          [theme]="{
+                            'border-radius': '0',
+                            height: '18px',
+                            width: '150px'
+                          }"
+                        ></ngx-skeleton-loader>
+                      </h5>
+                    </div>
+                    <div class="ui-grid-row">
+                      <div class="ui-grid-col-12">
+                        <ngx-skeleton-loader
+                          count="1"
+                          [theme]="{
+                            'border-radius': '0',
+                            height: '8px',
+                            width: '145px'
+                          }"
+                        ></ngx-skeleton-loader>
+                      </div>
+                    </div>
+                    <div class="ui-grid-row">
+                      <div class="ui-grid-col-12">
+                        <ngx-skeleton-loader
+                          count="1"
+                          [theme]="{
+                            'border-radius': '0',
+                            height: '8px',
+                            width: '180px'
+                          }"
+                        ></ngx-skeleton-loader>
+                      </div>
+                    </div>
+
+                    <div class="ui-grid-row">
+                      <div class="ui-grid-col-12">
+                        <ngx-skeleton-loader
+                          count="1"
+                          [theme]="{
+                            'border-radius': '0',
+                            height: '8px',
+                            width: '150px'
+                          }"
+                        ></ngx-skeleton-loader>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </ng-template>
-          </div>
-        </p-dataList>
+            </div>
+          </ng-template>
+        </p-dataView>
       </div>
     </div>
   </div>

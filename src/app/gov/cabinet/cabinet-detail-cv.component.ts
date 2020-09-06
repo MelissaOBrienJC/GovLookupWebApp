@@ -3,9 +3,8 @@ import { IJobPositionDto } from './cabinet';
 import { CabinetService } from './cabinet.service';
 
 @Component ({
-    moduleId: module.id,
     styleUrls: [],
-       templateUrl: 'cabinet-detail-cv.component.html',
+    templateUrl: 'cabinet-detail-cv.component.html',
     encapsulation: ViewEncapsulation.None,
     providers: []
 

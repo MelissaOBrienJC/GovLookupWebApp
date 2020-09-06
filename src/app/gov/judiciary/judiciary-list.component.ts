@@ -6,7 +6,6 @@ import { IJudiciarySummaryDto } from './judiciary';
 import { JudiciaryService } from './judiciary.service';
 
 @Component({
-  moduleId: module.id,
   templateUrl: 'judiciary-list.component.html',
   encapsulation: ViewEncapsulation.None
 

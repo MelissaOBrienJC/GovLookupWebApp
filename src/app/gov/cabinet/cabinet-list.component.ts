@@ -6,7 +6,6 @@ import { ICabinetDetailDto, ICabinetSummaryDto } from './cabinet';
 import { CabinetService } from './cabinet.service';
 
 @Component({
-  moduleId: module.id,
   templateUrl: 'cabinet-list.component.html',
   encapsulation: ViewEncapsulation.None
 
@@ -37,8 +36,10 @@ export class CabinetListComponent implements OnInit, OnDestroy {
     this.cabinetMembers = this.cabinetService.getCabinetMembersFromService();
     this.showDataList = false;
     if (this.cabinetMembers != null) {
+
       this.showDataList = true;
     } else {
+      console.log('find');
       this.findCabinetMembers('ALL');
     }
   }
@@ -61,6 +62,8 @@ export class CabinetListComponent implements OnInit, OnDestroy {
   }
 
   findCabinetMembersCallComplete(): void {
+    console.log ('this.cabinetMembers');
+    console.log(this.cabinetMembers);
     this.cabinetService.setCabinetMembers(this.cabinetMembers); // save to the service
     this.emptyMessage = 'No cabinet memers  found!';
     this.showDataList = true;
