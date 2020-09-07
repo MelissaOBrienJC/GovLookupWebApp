@@ -1,10 +1,10 @@
 ﻿header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url(assets/capitol.jpg) no-repeat center center;
+  background: url(assets/capitolmain_sm.jpg) no-repeat center center;
   text-align: center;
   color: #fff;
-  background-image: url(assets/capitol.jpg);
+  background-image: url(assets/capitolmain_sm.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -161,7 +161,7 @@ section.bills {
 }
 section.bills article {
   padding: 0 20px 0 515px;
-  background: url(assets/bills_sm.jpg) no-repeat 0 5px;
+  background: url(assets/billsmain_sm.jpg) no-repeat 0 5px;
   min-height: 220px;
 }
 
