@@ -3,7 +3,7 @@
     <div class="intro-text">
       <button
         class="btn btn-primary btn-xl text-uppercase"
-        [ngx-scroll-to]="'#getstarted'"
+        [ngxScrollTo]="'#getstarted'"
       >
         Get started
       </button>
@@ -11,64 +11,106 @@
   </div>
 </header>
 
-<section class="main">
+<section class="main pt-5 pb-5">
   <div id="getstarted" #getstarted></div>
-  <aside>
-    <div class="content cabinet">
-      <h3><a href="/cabinet">Cabinet</a></h3>
-      <p>Cabinet members of the current administration.</p>
+  <div class="maincontainer">
+    <div class="row">
+      <div class="feature-section col-12 col-md-4">
+        <div class="text-center">
+          <img alt="cabinet" src="../../assets/whitehouse.png" />
+          <h3>
+            <a class="black-link" href="/cabinet">Cabinet</a>
+          </h3>
+
+          <p>Cabinet members of the current administration.</p>
+        </div>
+      </div>
+
+      <div class="feature-section col-12 col-md-4">
+        <div class="text-center">
+          <img alt="congress" src="../../assets/congress.png" />
+
+          <h3>
+            <a class="black-link" href="/legislators">Legislators</a>
+          </h3>
+
+          <p>Search for senators and members of congress.</p>
+        </div>
+      </div>
+
+      <div class="feature-section col-12 col-md-4">
+        <div class="text-center">
+          <img alt="justice" src="../../assets/justice2.png" />
+          <h3>
+            <a class="black-link" href="/judiciary">Justices</a>
+          </h3>
+          <p>Supreme court justices, key decisions and opinions.</p>
+        </div>
+      </div>
     </div>
-  </aside>
-  <aside>
-    <div class="content congress">
-      <h3><a href="/legislators">Legislators</a></h3>
-      <p>Search for senators and members of congress.</p>
-    </div>
-  </aside>
-  <aside>
-    <div class="content judiciary{{ selectedJustice }}">
-      <h3><a href="/judiciary">Justices</a></h3>
-      <p>Supreme court justices, key decisions and opinions.</p>
-    </div>
-  </aside>
+  </div>
 </section>
 
-<section class="bills">
-  <article>
-    <a class="whitelink" title="bills" href="/bills"
-      ><h2>Bills under consideration</h2></a
+<div class="row feature-bills">
+  <div class="feature-section col-12 col-md-6 col-lg-4">
+    <img alt="bills" class="img-fluid p-4" src="../../assets/billsmain.png" />
+  </div>
+  <div class="feature-section col-12 col-md-6 text-left p-4">
+    <a class="white-link" title="bills" href="/bills">
+      <h3>Bills under consideration</h3></a
     >
     <p>Get information on bills that are being considered by congress.</p>
-  </article>
-</section>
-<section class="other-links">
-  <aside>
-    <div class="content">
-      <img alt="register to vote" src="assets/register.jpg" />
+  </div>
+</div>
+
+<div class="row other-links">
+  <div class="col-12 col-md-3">
+    <img
+      alt="register to vote"
+      class="img-fluid pl-4 pt-4 pb-3"
+      src="assets/register.png"
+    />
+    <div class="pl-4">
       <h4>Register to vote</h4>
       <p>It takes less than 2 minutes to register.</p>
       <a title="Register to vote." href="https://www.vote.org/register-to-vote/"
         >Register to Vote</a
       >
     </div>
-  </aside>
-  <aside>
-    <div class="content">
-      <img alt="town hall project" src="assets/townhall.png" />
-      <h4>Town Hall project</h4>
-      <p>Show up. Speak Out.</p>
+  </div>
+
+  <div class="col-12 col-md-3">
+    <img
+      alt="town hall project"
+      class="img-fluid pl-4 pt-4 pb-3"
+      src="assets/townhall.png"
+    />
+    <div class="pl-4">
+      <div class="mb-0">
+        <h4>Town Hall project</h4>
+      </div>
+      <div class="mt-0">
+        <p>Show up. Speak Out.</p>
+      </div>
       <a title="Town hall project." href="https://townhallproject.com/"
         >Find a town hall now</a
       >
     </div>
-  </aside>
-  <blockquote>
-    <p class="quote">{{ selectedQuote.text }}</p>
-    <p class="credit">
-      <strong>{{ selectedQuote.author }}</strong>
-    </p>
-  </blockquote>
-</section>
+  </div>
+
+  <div class="other-links-last-col col- 12 col-md-6 d-flex pr-5">
+    <div class="row align-items-end justify-content-end">
+      <!-- <div class="d-none d-sm-block"> -->
+      <blockquote>
+        <p class="quote">{{ selectedQuote.text }}</p>
+        <br />
+        <p class="credit">
+          <strong>{{ selectedQuote.author }}</strong>
+        </p>
+      </blockquote>
+    </div>
+  </div>
+</div>
 <!-- Footer -->
 <footer>
   <div class="row">

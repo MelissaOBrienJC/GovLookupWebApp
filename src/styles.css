@@ -2,20 +2,9 @@
 body {
   margin: 0;
   height: 100%;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
 }
 
 .navbar {
-  max-height: 50px;
   padding: 0;
 }
 
@@ -27,27 +16,10 @@ h6 {
 .header {
   padding: 0px;
 }
-/* section all */
 
 section {
-  padding: 0 30px;
+  padding-top:  30px;
 }
-
-.govlookup-img {
-  border: 3px solid darkblue;
-  box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 20px;
-}
-
-.govlookup-detail-text {
-  color: rgba(117, 117, 117, 1);
-}
-
-.govlookup-item-title {
-  font-style: italic;
-  color: #00008b;
-  font-weight: normal;
-}
-
-.ui-dataview .ui-dataview-content {
-  margin: 0px 0 !important;
+nav {
+  z-index: 9999;
 }

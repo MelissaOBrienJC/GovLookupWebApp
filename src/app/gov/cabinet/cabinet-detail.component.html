@@ -1,9 +1,9 @@
-<div class="container-fluid" style="padding-top: 40px; padding-bottom: 20px;">
+<div class="container-fluid" style="padding-top: 40px; padding-bottom: 20px">
   <div *ngIf="cabinetMember !== null">
     <div class="row">
       <!--containing row-->
 
-      <div class="col-sm-9" style="padding-left: 40px;">
+      <div class="col-sm-9" style="padding-left: 40px">
         <!--first 9 col for image and info -->
 
         <div class="row">
@@ -70,46 +70,47 @@
                   href="https://www.facebook.com/{{
                     cabinetMember.facebookAccount
                   }}/"
-                  style="font-size: 36px;"
+                  style="font-size: 36px"
                 ></a>
                 <a
                   class="fa fa-twitter-square"
                   href="https://twitter.com/{{ cabinetMember.twitterAccount }}/"
-                  style="font-size: 36px;"
+                  style="font-size: 36px"
                 ></a>
                 <a
                   class="fa fa-youtube-square"
                   href="https://www.youtube.com/{{
                     cabinetMember.youtubeAccount
                   }}/"
-                  style="font-size: 36px;"
+                  style="font-size: 36px"
                 ></a>
                 <a
                   class="fa fa-external-link-square"
                   href="{{ cabinetMember.url }}"
-                  style="font-size: 36px;"
+                  style="font-size: 36px"
                 ></a>
               </div>
             </section>
           </div>
         </div>
 
-        <div class="row" style="padding-top: 40px;">
+        <div class="row pt-4" >
           <!--in next  row use all 9 columns for tab control -->
           <br />
           <br />
           <br />
           <br />
           <section>
-            <div class="panel-body">
-              <p-tabMenu [model]="items" [activeItem]="items[0]"></p-tabMenu>
+            <p-tabMenu [model]="items"> </p-tabMenu>
+            <div class="p-sm">
               <router-outlet></router-outlet>
             </div>
+          
           </section>
         </div>
       </div>
 
-      <div class="col-sm-3" style="padding-right: 40px;">
+      <div class="col-sm-3 pr-5" >
         <!--last 3 columns for ratings and industry pie chart -->
         <section></section>
         <section></section>

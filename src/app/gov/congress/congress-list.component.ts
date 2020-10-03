@@ -9,8 +9,8 @@ import { takeUntil } from 'rxjs/operators';
 import {  ActivatedRoute } from '@angular/router';
 
 @Component ({
+    styleUrls: ['../shared/shared.css'],
     templateUrl: 'congress-list.component.html',
-    styleUrls: ['congress-list.component.css'],
     encapsulation: ViewEncapsulation.None,
         providers: []
 

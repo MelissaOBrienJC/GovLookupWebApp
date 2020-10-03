@@ -1,10 +1,10 @@
 .votedText {
   color: rgba(117, 117, 117, 1);
-  font-size: small;
+  font-size: x-small;
 }
 .votedDateText {
   color: rgba(117, 117, 117, 1);
-  font-size: medium;
+  font-size: small;
 }
 
 .minorityTallyText {
@@ -24,12 +24,12 @@
 
 .minorityVote {
   color: #eb0000;
-  font-size: 1em;
+  font-size: 10px;
 }
 
 .majorityVote {
   color: green;
-  font-size: 1em;
+  font-size: 10px;
 }
 
 .ui-dataview .ui-dataview-content {
@@ -45,8 +45,17 @@
 
 section {
   max-width: 100%;
+  padding: 0px 0 0 0 !important;
 }
 
 .keyVotes {
   font-family: "Poppins", sans-serif;
+}
+.keyvote-title {
+  color: black;
+  font-weight: bold;
+  font-size: 1em;
+}
+.summary-col {
+  padding: 0px 0 0 0 !important;
 }

@@ -1,0 +1,58 @@
+.govlookup-img {
+  border: 3px solid darkblue;
+  box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 20px;
+}
+
+.govlookup-detail-text {
+  color: rgba(117, 117, 117, 1);
+  font-size: 1em;
+}
+
+.govlookup-item-title {
+  text-transform: uppercase;
+  color: #00008b;
+  font-weight: bold;
+  font-size: 0.75em;
+}
+.ui-dataview-header {
+  margin: 0px 0 !important;
+  padding: 0px !important;
+}
+.ui-dataview-content {
+  margin: 0px 0 !important;
+  padding: 0px !important;
+}
+.row {
+  margin: 0px 0 !important;
+}
+.govlookup-listitem-row-header {
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-left: 7px;
+  margin-right: 7px;
+  font-weight: bold;
+  font-size: 0.95em;
+}
+.govlookup-listitem-row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 0.95em;
+  border-bottom: 1px solid #d5d5d5;
+}
+.govlookup-listitem-row-skeleton {
+  padding-top: 20px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+  font-size: 0.95em;
+  border-bottom: 1px solid #d5d5d5;
+}
+.govlookup-listitem-img {
+  min-width: 80px !important;
+  max-width: none;
+  text-align: center !important;
+}

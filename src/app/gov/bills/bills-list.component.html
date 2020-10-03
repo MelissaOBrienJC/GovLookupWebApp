@@ -1,170 +1,140 @@
-<div class="container" style="padding-top: 40px; padding-bottom: 20px"></div>
-<div style="width: 50%; margin: 0 auto">
-  <div class="mx-auto">
-    <!-- <div  [ngBusy]="{busy: busy, message: 'Searching...', backdrop: false}"></div> -->
+<div class="container pt-4 pb-3"></div>
+<div class="w-50 mx-auto">
+  <div *ngIf="showDataList">
+    <div *ngIf="bills">
+      <p-dataView
+        [value]="bills"
+        [paginator]="false"
+        emptyMessage="{{ emptyMessage }}"
+      >
+        <p-header>
+          <div class="row govlookup-listitem-row-header">
+            <div class="col-12">Bills Under Consideration</div>
+          </div>
+        </p-header>
+        <ng-template let-bills pTemplate="listItem">
+          <div class="row govlookup-listitem-row">
+            <div class="col-2 govlookup-listitem-img my-auto">
+              <img
+                src="../../assets/bills.png"
+                alt="bill"
+                class="img-thumbnail"
+                width="80px"
+                height="136px"
+              />
+            </div>
 
-    <div *ngIf="showDataList">
-      <div *ngIf="bills">
-        <p-dataView
-          [value]="bills"
-          [paginator]="false"
-          emptyMessage="{{ emptyMessage }}"
-        >
-          <p-header>
-            <div class="text-center">Bills Under Consideration</div>
-          </p-header>
-
-          <ng-template let-bills pTemplate="listItem">
-            <div
-              class="ui-grid ui-grid-responsive ui-fluid"
-              style="
-                font-size: 16px;
-                padding: 20px;
-                border-bottom: 1px solid #d5d5d5;
-              "
-            >
-              <div class="ui-grid-row">
-                <div class="ui-grid-col-3" style="text-align: center">
-                  <img
-                    src="../../assets/bills.png"
-                    alt="bill"
-                    class="img-thumbnail"
-                    width="80px"
-                    height="136px"
-                  />
+            <div class="col-10">
+              <div class="row">
+                <h5 class="bill-name">
+                  <div class="col-12">
+                    {{ bills.timeFrame }}
+                  </div>
+                </h5>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div *ngIf="bills.Title !== null">
+                    {{ bills.title }}
+                  </div>
                 </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div *ngIf="bills.number !== null">
+                    {{ bills.number }}
+                  </div>
+                </div>
+              </div>
 
-                <div class="ui-grid-col-8">
-                  <div class="ui-grid ui-grid-responsive ui-fluid">
-                    <div class="ui-grid-row">
-                      <h5 class="bill-name">
-                        <div class="ui-grid-col-12">
-                          {{ bills.timeFrame }}
-                        </div>
-                      </h5>
-                    </div>
-                    <div class="ui-grid-row">
-                      <div class="ui-grid-col-12">
-                        <div *ngIf="bills.Title !== null">
-                          {{ bills.title }}
-                        </div>
-                      </div>
-                    </div>
-                    <div class="ui-grid-row">
-                      <div class="ui-grid-col-12">
-                        <div *ngIf="bills.number !== null">
-                          {{ bills.number }}
-                        </div>
-                      </div>
-                    </div>
+              <div class="row">
+                <div class="col-12">
+                  <div *ngIf="bills.url !== null">
+                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
 
-                    <div class="ui-grid-row">
-                      <div class="ui-grid-col-12 for-font-size">
-                        <div *ngIf="bills.url !== null">
-                          <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-
-                          <a href="{{ bills.url }}"> PDF text of bill. </a>
-                        </div>
-                      </div>
-                    </div>
+                    <a href="{{ bills.url }}"> PDF text of bill. </a>
                   </div>
                 </div>
               </div>
             </div>
-          </ng-template>
-        </p-dataView>
-      </div>
-      <div *ngIf="!bills">
-        <p-dataView
-          [value]="generateSkeleton(2)"
-          [paginator]="false"
-          emptyMessage="{{ emptyMessage }}"
-        >
-          <p-header><br /> </p-header>
+          </div>
+        </ng-template>
+      </p-dataView>
+    </div>
+    <div *ngIf="!bills">
+      <p-dataView
+        [value]="generateSkeleton(4)"
+        [paginator]="false"
+        emptyMessage="{{ emptyMessage }}"
+      >
+        <p-header>
+          <div class="row govlookup-listitem-row-header">
+            <div class="col-md-12"></div>
+            <ngx-skeleton-loader
+              count="1"
+              [theme]="{
+                'border-radius': '0',
+                height: '8px',
+                width: '145px'
+              }"
+            ></ngx-skeleton-loader>
+          </div>
+        </p-header>
 
-          <ng-template let-skeleton pTemplate="listItem">
-            <div
-              class="ui-grid ui-grid-responsive ui-fluid"
-              style="
-                font-size: 16px;
-                padding: 10px;
-                border-bottom: 1px solid #d5d5d5;
-              "
-            >
-              <div class="ui-grid-row">
-                <div class="ui-grid-col-3" style="text-align: center">
-                  <i
-                    class="fa fa-search"
-                    style="cursor: pointer; float: left; margin-top: 40px"
-                  ></i>
+        <ng-template let-skeleton pTemplate="listItem">
+          <div class="row govlookup-listitem-row">
+            <div class="col-2 govlookup-listitem-img my-auto">
+              <ngx-skeleton-loader
+                count="1"
+                [theme]="{
+                  'border-radius': '0',
+                  height: '65px',
+                  width: '55px'
+                }"
+              ></ngx-skeleton-loader>
+            </div>
+
+            <div class="col-10">
+              <div class="row">
+                <div class="col-12">
                   <ngx-skeleton-loader
                     count="1"
                     [theme]="{
                       'border-radius': '0',
-                      height: '90px',
-                      width: '75px'
+                      height: '10px',
+                      width: '300px'
                     }"
                   ></ngx-skeleton-loader>
                 </div>
-
-                <div class="ui-grid-col-9">
-                  <div class="ui-grid ui-grid-responsive ui-fluid">
-                    <div class="ui-grid-row">
-                      <h5 class="judge-name">
-                        <ngx-skeleton-loader
-                          count="1"
-                          [theme]="{
-                            'border-radius': '0',
-                            height: '18px',
-                            width: '150px'
-                          }"
-                        ></ngx-skeleton-loader>
-                      </h5>
-                    </div>
-                    <div class="ui-grid-row">
-                      <div class="ui-grid-col-12">
-                        <ngx-skeleton-loader
-                          count="1"
-                          [theme]="{
-                            'border-radius': '0',
-                            height: '8px',
-                            width: '145px'
-                          }"
-                        ></ngx-skeleton-loader>
-                      </div>
-                    </div>
-                    <div class="ui-grid-row">
-                      <div class="ui-grid-col-12">
-                        <ngx-skeleton-loader
-                          count="1"
-                          [theme]="{
-                            'border-radius': '0',
-                            height: '8px',
-                            width: '180px'
-                          }"
-                        ></ngx-skeleton-loader>
-                      </div>
-                    </div>
-
-                    <div class="ui-grid-row">
-                      <div class="ui-grid-col-12">
-                        <ngx-skeleton-loader
-                          count="1"
-                          [theme]="{
-                            'border-radius': '0',
-                            height: '8px',
-                            width: '150px'
-                          }"
-                        ></ngx-skeleton-loader>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <ngx-skeleton-loader
+                    count="1"
+                    [theme]="{
+                      'border-radius': '0',
+                      height: '8px',
+                      width: '145px'
+                    }"
+                  ></ngx-skeleton-loader>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <ngx-skeleton-loader
+                    count="1"
+                    [theme]="{
+                      'border-radius': '0',
+                      height: '8px',
+                      width: '145px'
+                    }"
+                  ></ngx-skeleton-loader>
                 </div>
               </div>
             </div>
-          </ng-template>
-        </p-dataView>
-      </div>
+          </div>
+        </ng-template>
+      </p-dataView>
     </div>
   </div>
 </div>

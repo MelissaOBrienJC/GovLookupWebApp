@@ -1,22 +1,21 @@
 <nav
-  class="navbar navbar-toggleable-md navbar-inverse bg-inverse navbar-fixed-top"
+  class="navbar navbar-expand-sm navbar-toggleable-md navbar-inverse bg-inverse navbar-fixed-top navbar-dark bg-dark"
 >
+  <a class="navbar-brand" href="/">
+    <img src="assets/govLookupLogo.png" alt="GovLookup logo" />
+  </a>
   <button
-    class="navbar-toggler navbar-toggler-right"
+    class="navbar-toggler"
     type="button"
     data-toggle="collapse"
-    data-target="#navbarTogglerDemo02"
-    aria-controls="navbarTogglerDemo02"
+    data-target="#navbarTogglerGovLookup"
+    aria-controls="navbarTogglerGovLookup"
     aria-expanded="false"
     aria-label="Toggle navigation"
   >
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="/">
-    <img src="assets/govLookupLogo.png" alt="GovLookup logo" />
-  </a>
-
-  <div class="collapse navbar-collapse" id="navbarToggler">
+  <div class="collapse navbar-collapse" id="navbarTogglerGovLookup">
     <ul class="navbar-nav ml-auto mt-2 mt-md-0">
       <li class="nav-item">
         <a [routerLink]="['/welcome']" class="nav-link text-white">Home</a>
@@ -26,7 +25,8 @@
       </li>
       <li class="nav-item">
         <a [routerLink]="['/legislators']" class="nav-link text-white"
-          >Legislators</a        >
+          >Legislators</a
+        >
       </li>
       <li class="nav-item">
         <a [routerLink]="['/judiciary']" class="nav-link text-white"
@@ -39,5 +39,4 @@
     </ul>
   </div>
 </nav>
-
 <router-outlet></router-outlet>

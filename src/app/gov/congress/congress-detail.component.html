@@ -1,13 +1,15 @@
-<div class="container-fluid" style="padding-top: 40px; padding-bottom: 20px;">
+<div class="container-fluid" style="padding-top: 40px; padding-bottom: 20px">
   <div *ngIf="legislator !== null">
     <div class="row">
       <!--containing row-->
 
-      <div class="col-sm-9" style="padding-left: 40px;">
+      <div
+        class="pl-20px col-12 col-sm-6 pt-sm-30px pb-sm-30px col-lg-8 pl-lg-40px"
+      >
         <!--first 9 col for image and info -->
 
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-12 col-lg-4">
             <!--first 3 col for image -->
             <img
               class="govlookup-img"
@@ -15,8 +17,11 @@
               alt="legislator picture"
               onerror="this.src='./../assets/legislators/person.jpg'"
             />
+            <br />
+            <br />
+            <br />
           </div>
-          <div class="col-sm-6">
+          <div class="col-12 col-lg-8">
             <!--next  6 col for info -->
             <section>
               <div class="ui-grid-row">
@@ -89,13 +94,13 @@
                   href="https://www.facebook.com/{{
                     legislator.facebookAccount
                   }}/"
-                  style="font-size: 36px;"
+                  style="font-size: 36px"
                 ></a>
                 <a
                   aria-label="twitter"
                   class="fa fa-twitter-square"
                   href="https://twitter.com/{{ legislator.twitterAccount }}/"
-                  style="font-size: 36px;"
+                  style="font-size: 36px"
                 ></a>
                 <a
                   aria-label="youtube"
@@ -103,35 +108,42 @@
                   href="https://www.youtube.com/{{
                     legislator.youtubeAccount
                   }}/"
-                  style="font-size: 36px;"
+                  style="font-size: 36px"
                 ></a>
                 <a
                   aria-label="legislator website"
                   class="fa fa-external-link-square"
                   href="{{ legislator.url }}"
-                  style="font-size: 36px;"
+                  style="font-size: 36px"
                 ></a>
               </div>
             </section>
           </div>
         </div>
-
-        <div class="row" style="padding-top: 40px;">
+        <div class="d-none d-sm-block d-md-none">
+          <br />
+          <br />
+        </div>
+        <div class="row" style="padding-top: 40px">
           <!--in next  row use all 9 columns for tab control -->
+
           <br />
           <br />
           <br />
-          <br />
+
           <section>
             <div class="panel-body">
               <p-tabMenu [model]="items" [activeItem]="items[0]"></p-tabMenu>
-              <router-outlet></router-outlet>
+              <div style="padding: 0.5em">
+                <router-outlet></router-outlet>
+              </div>
+              <!-- <router-outlet></router-outlet> -->
             </div>
           </section>
         </div>
       </div>
 
-      <div class="col-sm-3" style="padding-right: 40px;">
+      <div class="pr-20px col-12 col-sm-6 pr-0px col-lg-4 pr-30px">
         <!--last 3 columns for ratings and industry pie chart -->
         <section>
           <p-table
@@ -161,9 +173,7 @@
                     "
                   >
                     <img
-                      src="assets/ratings/bc_{{
-                        rating.ratingValue
-                      }}_sm.png"
+                      src="assets/ratings/bc_{{ rating.ratingValue }}_sm.png"
                       alt="rating"
                     />
                   </div>

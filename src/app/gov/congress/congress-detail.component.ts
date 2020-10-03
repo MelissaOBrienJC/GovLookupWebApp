@@ -12,7 +12,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  styleUrls: ['congress-detail.component.css'],
+  styleUrls: ['congress-detail.component.css' ,'../shared/shared.css'],
   templateUrl: 'congress-detail.component.html',
 
   encapsulation: ViewEncapsulation.None,

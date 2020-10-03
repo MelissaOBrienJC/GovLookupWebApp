@@ -6,6 +6,7 @@ import { IJudiciarySummaryDto } from './judiciary';
 import { JudiciaryService } from './judiciary.service';
 
 @Component({
+  styleUrls: ['../shared/shared.css'],
   templateUrl: 'judiciary-list.component.html',
   encapsulation: ViewEncapsulation.None
 

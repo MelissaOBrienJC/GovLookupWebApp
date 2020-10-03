@@ -14,7 +14,6 @@ import { DataViewModule } from 'primeng/dataview';
 
 import { PanelModule } from 'primeng/panel';
 import { TabViewModule } from 'primeng/tabview';
-import { GaugeModule } from 'angular-gauge';
 import { NgxGaugeModule } from 'ngx-gauge';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SelectButtonModule } from 'primeng/selectbutton';
@@ -23,38 +22,37 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 
 @NgModule({
-  imports: [
-    CommonModule
+    imports: [
+        CommonModule
 
-  ],
-  declarations: [
+    ],
+    declarations: [
 
-  ],
-  exports: [
+    ],
+    exports: [
 
-    FormsModule,
-    DataViewModule,
-    TabMenuModule,
-    TableModule,
-    ChartModule,
-    DataViewModule,
-    PanelModule,
-    TabViewModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    RouterModule,
-    GaugeModule,
-    NgxGaugeModule,
-    DropdownModule,
-    AccordionModule,
-    RadioButtonModule,
-    SelectButtonModule,
-    ScrollToModule,
+        FormsModule,
+        DataViewModule,
+        TabMenuModule,
+        TableModule,
+        ChartModule,
+        DataViewModule,
+        PanelModule,
+        TabViewModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        RouterModule,
+        NgxGaugeModule,
+        DropdownModule,
+        AccordionModule,
+        RadioButtonModule,
+        SelectButtonModule,
+        ScrollToModule,
 
 
-  ],
-  providers: [
+    ],
+    providers: [
 
-  ]
+    ]
 })
 export class SharedModule { }
