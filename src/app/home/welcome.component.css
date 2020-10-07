@@ -1,13 +1,13 @@
 ﻿header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url(../../assets/capitolmain_sm.jpg) no-repeat center center;
+  background: url(../../assets/capitolmain_crop.jpg) no-repeat center center;
   text-align: center;
   color: #fff;
-  background-image: url(../../assets/capitolmain_sm.jpg);
+  background-image: url(../../assets/capitolmain_crop.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center center;
+  background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -19,6 +19,16 @@
 header.masthead .intro-text {
   padding-top: 150px;
   padding-bottom: 100px;
+}
+
+@media screen and (min-width: 1440px) {
+  header.masthead {
+    min-height: 1000px !important;
+  }
+  header.masthead .intro-text {
+    padding-top: 500px;
+    padding-bottom: 100px;
+  }
 }
 
 .maincontainer {
