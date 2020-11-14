@@ -3,9 +3,9 @@
 Angular Web Application that displays data for U.S. Legislators, Cabinet and Judiciary.
  
 ## Demo
-<a href="https://www.govlookup.mobdemo.org" rel="nofollow">Try out the demo!</a>
+<a href="https://govlookup.mobdemo.org" rel="nofollow">Try out the demo!</a>
 <p align="center">    
-    <img src="http://www.govlookup.mobdemo.org//images//screencapture4-govlookup-mobdemo-org.png" />   
+    <img src="http://govlookup.mobdemo.org//images//screencapture4-govlookup-mobdemo-org.png" />   
  </p>
 
 
