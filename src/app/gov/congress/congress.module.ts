@@ -8,6 +8,7 @@ import { CongressDetailKeyVotesComponent } from './congress-detail-keyvotes.comp
 import { CongressDetailVoteStatComponent } from './congress-detail-votestat.component';
 import { CongressDetailBillsComponent } from './congress-detail-bills.component';
 import { CongressDetailCommitteeComponent } from './congress-detail-committee.component';
+import { CongressDetailTweetsComponent } from './congress-detail-tweets.component';
 import { SharedModule } from '../shared/shared.module';
 import { CongressService } from './congress.service';
 import { CongressResolver } from './congress-resolver.service';
@@ -39,6 +40,10 @@ import { CongressResolver } from './congress-resolver.service';
           {
             path: 'committees',
             component:  CongressDetailCommitteeComponent
+          },
+          {
+            path: 'tweets',
+            component:   CongressDetailTweetsComponent
           }
         ]
       }

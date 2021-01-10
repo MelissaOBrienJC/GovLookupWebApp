@@ -28,7 +28,7 @@
                 <h3 class="detail-name-header">
                   {{ legislator.firstName }} {{ legislator.lastName }}
                   <span class="next-election"
-                    >Up for election in {{ legislator.nextElection }}</span
+                    >Up for re-election in {{ legislator.nextElection }}</span
                   >
                 </h3>
               </div>
@@ -47,7 +47,7 @@
                         ? "Congresswoman"
                         : "Congressman"
                     }}
-                    {{ legislator.stateName }} District No.
+                    {{ legislator.stateName }} District 
                     {{ legislator.district }}
                   </div>
                   <ng-template #stateNameOnly>

@@ -2,6 +2,12 @@ section {
   max-width: 100%;
 }
 
+
+.tab-section
+{
+  min-width: 600px;
+}
+
 .fa {
   padding-right: 5px;
 }

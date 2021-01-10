@@ -4,7 +4,7 @@ export interface IKeyVoteDto {
       finalTitle: string;
       status: string;
       voteCast: string;
-      voteDate_dt: Date;
+      voteDate: Date;
       synopsis: string;
       congressYear: string;
       session: number;

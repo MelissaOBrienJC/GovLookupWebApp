@@ -27,6 +27,7 @@ export class CongressDetailKeyVotesComponent implements OnInit {
   ngOnInit(): void {
 
     this.keyVotes = this._congressService.getKeyVotesFromService();
+    console.log( this.keyVotes );
 
 
 

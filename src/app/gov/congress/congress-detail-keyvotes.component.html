@@ -27,7 +27,7 @@
       </div>
       <div class="ui-g-12 ui-md-10 keyVotes">
         <div class="ui-g">
-          {{ vote.vote_date_dt | date: "shortDate" }} &nbsp;
+          {{ vote.voteDate | date: "shortDate" }} &nbsp;
           {{ vote.voteCast === "NotVoting" ? "" : "voted" }}
           <strong
             [ngClass]="

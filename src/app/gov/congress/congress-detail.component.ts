@@ -115,7 +115,8 @@ export class CongressDetailComponent implements OnInit, OnDestroy {
       { label: 'Key Votes', icon: 'fa fa-check-circle', routerLink: ['keyvotes'] },
       { label: 'Voting Stats', icon: 'fa fa-bar-chart', routerLink: ['stats'] },
       { label: 'Bills', icon: 'fa fas fa-edit', routerLink: ['bills'] },
-      { label: 'Committees', icon: 'fa fa-users', routerLink: ['committees'] }
+      { label: 'Committees', icon: 'fa fa-users', routerLink: ['committees'] },
+      { label: 'Tweets', icon: 'fa fa-twitter', routerLink: ['tweets'] }
 
 
     ];
